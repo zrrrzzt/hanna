@@ -1,0 +1,46 @@
+{
+  "name": "hanna",
+  "version": "1.0.0",
+  "description": "Hyllest til Hanna",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && npm audit && ava",
+    "test-offline": "standard && ava",
+    "coverage": "nyc ava",
+    "coveralls": "nyc ava && nyc report --reporter=lcov && cat coverage/lcov.info | coveralls",
+    "standard-fix": "standard --fix",
+    "dev": "next",
+    "build": "next build && next export",
+    "start": "next start",
+    "now-build": "next build && next export",
+    "deploy": "npm test && now && now alias",
+    "refresh": "rm -rf node_modules && rm package-lock.json && npm install"
+  },
+  "author": "Geir Gåsodden <geir.gasodden@pythonia.no> (https://github.com/zrrrzzt)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zrrrzzt/hanna.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zrrrzzt/hanna/issues"
+  },
+  "homepage": "https://github.com/zrrrzzt/hanna#readme",
+  "dependencies": {
+    "crypto-shuffle": "1.0.1",
+    "next": "8.0.1",
+    "random-shout": "1.1.0",
+    "react": "16.8.2",
+    "react-dom": "16.8.2"
+  },
+  "devDependencies": {
+    "ava": "1.2.1",
+    "coveralls": "3.0.2",
+    "nyc": "13.3.0",
+    "standard": "12.0.1"
+  },
+  "engines": {
+    "node": ">= 10.15.1"
+  }
+}

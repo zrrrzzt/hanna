@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "name": "hanna",
+  "alias": [
+    "hanna.hater.allthethings.win"
+  ],
+  "builds": [
+    { "src": "package.json", "use": "@now/static-build", "config": { "distDir": "out" }}
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
