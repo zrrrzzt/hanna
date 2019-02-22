@@ -29,7 +29,7 @@
   "homepage": "https://github.com/zrrrzzt/hanna#readme",
   "dependencies": {
     "crypto-shuffle": "1.0.1",
-    "next": "8.0.1",
+    "next": "8.0.2",
     "random-shout": "1.1.0",
     "react": "16.8.3",
     "react-dom": "16.8.3"
