@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import shuffle from 'crypto-shuffle'
 import shout from 'random-shout'
+import emoji from 'random-angry-emoji'
 import words from '../lib/words'
 import intros from '../lib/intros'
 import endings from '../lib/endings'
@@ -10,7 +11,7 @@ function getWord () {
   const wordList = shuffle(words.slice(0))
   const introList = shuffle(intros.slice(0))
   const endingsList = shuffle(endings.slice(0))
-  const sentence = `Jeg ${introList[0]} ${wordList[0]} ${endingsList[0]}`
+  const sentence = `Jeg ${introList[0]} ${wordList[0]} ${endingsList[0]} ${emoji()}`
   return shout(sentence)
 }
 
