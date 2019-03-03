@@ -57,9 +57,9 @@ const Index = class extends React.Component {
             }
             button {
               font-weight: 500;
-              width: 400px;
+              width: 90%;
               height: 60px;
-              font-size: 40px
+              font-size: 30px;
               border-radius: 25px;
               border: 1px solid black;
               cursor: pointer;
