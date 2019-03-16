@@ -1,14 +1,14 @@
 import React from 'react'
 import Head from 'next/head'
 import shout from 'random-shout'
-import emoji from 'random-angry-emoji'
+import emojis from '../lib/emojis'
 import words from '../lib/words'
 import intros from '../lib/intros'
 import endings from '../lib/endings'
 import randomEntry from '../lib/random-entry'
 
 function getWord () {
-  const sentence = `Jeg ${randomEntry(intros)} ${randomEntry(words)} ${randomEntry(endings)} ${emoji()}`
+  const sentence = `Jeg ${randomEntry(intros)} ${randomEntry(words)} ${randomEntry(endings)} ${emojis()}`
   return shout(sentence)
 }
 
