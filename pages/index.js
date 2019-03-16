@@ -18,10 +18,10 @@ const Index = class extends React.Component {
     this.state = {
       word: getWord()
     }
-    this.deployHappiness = this.deployHappiness.bind(this)
+    this.triggerDarkness = this.triggerDarkness.bind(this)
   }
 
-  deployHappiness () {
+  triggerDarkness () {
     const word = getWord()
     this.setState({ word: word })
   }
@@ -40,7 +40,7 @@ const Index = class extends React.Component {
             {this.state.word}
           </div>
           <p>
-            <button onClick={this.deployHappiness}>Keep me going</button>
+            <button onClick={this.triggerDarkness}>Keep me going</button>
           </p>
           <style jsx global>
             {`
