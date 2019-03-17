@@ -14,6 +14,13 @@ function getWord () {
 
 const Index = () => {
   const [word, setWord] = useState(getWord())
+  const [image, setImage] = useState('/static/hanna.jpg')
+
+  const handleClick = () => {
+    setImage('/static/hanna-xray.jpg')
+    setTimeout(() => setImage('/static/hanna.jpg'), 100)
+    setWord(getWord())
+  }
 
   return (
     <div>
@@ -23,12 +30,12 @@ const Index = () => {
       </Head>
       <div className={'wrapper'}>
         <h1>Hanna hater ting!</h1>
-        <img src={'/static/hanna.jpg'} />
+        <img src={image} />
         <div className='fortune-box'>
           {word}
         </div>
         <p>
-          <button onClick={() => setWord(getWord())}>Keep me going</button>
+          <button onClick={() => handleClick()}>Keep me going</button>
         </p>
         <style jsx global>
           {`
@@ -54,6 +61,9 @@ const Index = () => {
             outline: 0;
           }
           button:focus {
+            outline:0;
+          }
+          button:hover {
             outline:0;
           }
           button:active {
