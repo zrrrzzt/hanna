@@ -44,7 +44,7 @@ const Index = () => {
             font-weight: 500;
             width: 90%;
             height: 60px;
-            font-size: 30px;
+            font-size: 2em;
             border-radius: 25px;
             border: 1px solid black;
             cursor: pointer;
@@ -61,7 +61,7 @@ const Index = () => {
             background-color: plum;
           }
           .fortune-box {
-            font-size: 48px;
+            font-size: 2.5em;
             padding: 15px;
           }
           .wrapper {
