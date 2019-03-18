@@ -22,7 +22,6 @@ const Index = () => {
 
   const handleClick = () => {
     setImage(toggleImage(image))
-    setTimeout(() => setImage(toggleImage('/static/hanna-xray.jpg')), 100)
     setWord(getWord())
   }
 
