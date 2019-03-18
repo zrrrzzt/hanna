@@ -12,13 +12,17 @@ function getWord () {
   return shout(sentence)
 }
 
+function toggleImage (image) {
+  return image === 'static/hanna.jpg' ? 'static/hanna-xray.jpg' : 'static/hanna.jpg'
+}
+
 const Index = () => {
   const [word, setWord] = useState(getWord())
-  const [image, setImage] = useState('/static/hanna.jpg')
+  const [image, setImage] = useState(toggleImage())
 
   const handleClick = () => {
-    setImage('/static/hanna-xray.jpg')
-    setTimeout(() => setImage('/static/hanna.jpg'), 100)
+    setImage(toggleImage(image))
+    setTimeout(() => setImage(toggleImage('/static/hanna-xray.jpg')), 100)
     setWord(getWord())
   }
 
