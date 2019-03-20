@@ -5,6 +5,7 @@ import emojis from '../lib/emojis'
 import words from '../lib/words'
 import intros from '../lib/intros'
 import endings from '../lib/endings'
+import images from '../lib/images'
 import randomEntry from '../lib/random-entry'
 
 function getWord () {
@@ -12,16 +13,12 @@ function getWord () {
   return shout(sentence)
 }
 
-function toggleImage (image) {
-  return image === 'static/hanna.jpg' ? 'static/hanna-xray.jpg' : 'static/hanna.jpg'
-}
-
 const Index = () => {
   const [word, setWord] = useState(getWord())
-  const [image, setImage] = useState(toggleImage())
+  const [image, setImage] = useState(randomEntry(images))
 
   const handleClick = () => {
-    setImage(toggleImage(image))
+    setImage(randomEntry(images))
     setWord(getWord())
   }
 
