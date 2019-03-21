@@ -26,11 +26,12 @@ const Index = () => {
     <div>
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <meta name='description' content='Side som genererer tilfeldige ting Hanna hater.' />
         <title>Hanna hater ting!</title>
       </Head>
       <div className={'wrapper'}>
         <h1>Hanna hater ting!</h1>
-        <img src={image} />
+        <img src={image} alt='Illuastrasjonsbilde av Hanna' />
         <div className='fortune-box'>
           {word}
         </div>
