@@ -6,6 +6,7 @@ import words from '../lib/words'
 import intros from '../lib/intros'
 import endings from '../lib/endings'
 import images from '../lib/images'
+import colors from '../lib/colors'
 import randomEntry from '../lib/random-entry'
 
 function getWord () {
@@ -16,10 +17,12 @@ function getWord () {
 const Index = () => {
   const [word, setWord] = useState(getWord())
   const [image, setImage] = useState(randomEntry(images))
+  const [color, setColor] = useState(randomEntry(colors))
 
   const handleClick = () => {
     setImage(randomEntry(images))
     setWord(getWord())
+    setColor(randomEntry(colors))
   }
 
   return (
@@ -43,7 +46,7 @@ const Index = () => {
           body {
             background-color: Black;
             padding: 20px;
-            color: lime;
+            color: ${color};
           }
           img {
             border-radius: 25px;
