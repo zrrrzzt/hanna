@@ -7,6 +7,7 @@ import intros from '../lib/intros'
 import endings from '../lib/endings'
 import images from '../lib/images'
 import colors from '../lib/colors'
+import fonts from '../lib/fonts'
 import randomEntry from '../lib/random-entry'
 
 function getWord () {
@@ -18,11 +19,13 @@ const Index = () => {
   const [word, setWord] = useState(getWord())
   const [image, setImage] = useState(randomEntry(images))
   const [color, setColor] = useState(randomEntry(colors))
+  const [font, setFont] = useState(randomEntry(fonts))
 
   const handleClick = () => {
     setImage(randomEntry(images))
     setWord(getWord())
     setColor(randomEntry(colors))
+    setFont(randomEntry(fonts))
   }
 
   return (
@@ -33,53 +36,40 @@ const Index = () => {
         <title>Hanna hater ting!</title>
       </Head>
       <div className={'wrapper'}>
-        <h1>Hanna hater ting!</h1>
-        <img src={image} alt='Illuastrasjonsbilde av Hanna' />
+        <img src={image} alt='Illuastrasjonsbilde av Hanna' onClick={() => handleClick()} />
         <div className='fortune-box'>
           {word}
         </div>
-        <p>
-          <button onClick={() => handleClick()}>Keep me going</button>
-        </p>
         <style jsx global>
           {`
           body {
             background-color: Black;
             padding: 20px;
             color: ${color};
+            font-family: ${font}, serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
           }
           img {
             border-radius: 25px;
-          }
-          button {
-            font-weight: 500;
-            width: 90%;
-            height: 60px;
-            font-size: 2em;
-            border-radius: 25px;
-            border: 1px solid black;
+            border: 2px solid ${color};
             cursor: pointer;
-            display: inline-block;
-            text-decoration: none;
-            background-color: thistle;
-            outline: 0;
-          }
-          button:focus {
-            outline:0;
-          }
-          button:hover {
-            outline:0;
-          }
-          button:active {
-            outline: 0;
-            background-color: plum;
           }
           .fortune-box {
-            font-size: 2.5em;
+            font-size: 3em;
             padding: 15px;
           }
           .wrapper {
-            text-align: center;
+            width: 780px;
+            display: flex;
+          }
+          @media screen and (max-width: 780px) {
+            .wrapper {
+              width: 100%;
+              display: block;
+              text-align: center;
+            }
           }
         `}
         </style>
