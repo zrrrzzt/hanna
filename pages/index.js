@@ -65,10 +65,17 @@ const Index = () => {
             display: flex;
           }
           @media screen and (max-width: 780px) {
+            img {
+              height: 100px;
+            }
             .wrapper {
               width: 100%;
               display: block;
               text-align: center;
+            }
+            .fortune-box {
+              font-size: 2em;
+              padding: 10px;
             }
           }
         `}
