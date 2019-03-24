@@ -44,7 +44,7 @@ const Index = () => {
         <title>Hanna hater ting!</title>
       </Head>
       <div className={'wrapper'} id='hanna-card'>
-        <img src={image} alt='Illuastrasjonsbilde av Hanna' onClick={() => handleClick()} />
+        <img src={image} alt='Illuastrasjonsbilde av Hanna - Trykk for å endre innholdet på siden' role='button' tabindex='0' onClick={() => handleClick()} />
         <div className='fortune-box'>
           {word}
         </div>
@@ -63,12 +63,14 @@ const Index = () => {
             border-radius: 25px;
             border: 2px solid ${color};
             cursor: pointer;
+            outline: 0;
           }
           .fortune-box {
             font-size: 3em;
             padding: 15px;
           }
           .wrapper {
+            padding: 10px;
             width: 780px;
             display: flex;
             background-color: black;
@@ -79,6 +81,7 @@ const Index = () => {
           .save-link {
             text-decoration: none;
             font-size: 2em;
+            outline: 0;
           }
           @media screen and (max-width: 780px) {
             img {
@@ -98,7 +101,7 @@ const Index = () => {
         </style>
       </div>
       <div className='save-wrapper'>
-        <a href='#' className='save-link' onClick={saveCard}>💾</a>
+        <a href='#' className='save-link' title='Save this moment 4ever' role='button' tabindex='1' onClick={saveCard}>💾</a>
       </div>
     </div>
   )

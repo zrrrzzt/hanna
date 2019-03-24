@@ -5,4 +5,3 @@ Hyllest til Hanna
 # License
 
 [MIT](LICENSE)
-
