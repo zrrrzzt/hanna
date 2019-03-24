@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
 import shout from 'random-shout'
+import domToImage from 'dom-to-image'
+import { saveAs } from 'file-saver'
 import emojis from '../lib/emojis'
 import words from '../lib/words'
 import intros from '../lib/intros'
@@ -28,6 +30,12 @@ const Index = () => {
     setFont(randomEntry(fonts))
   }
 
+  const saveCard = async e => {
+    e.preventDefault()
+    const blob = await domToImage.toBlob(window.document.getElementById('hanna-card'))
+    saveAs(blob, `hanna-${new Date().getTime()}.png`)
+  }
+
   return (
     <div>
       <Head>
@@ -35,7 +43,7 @@ const Index = () => {
         <meta name='description' content='Side som genererer tilfeldige ting Hanna hater.' />
         <title>Hanna hater ting!</title>
       </Head>
-      <div className={'wrapper'}>
+      <div className={'wrapper'} id='hanna-card'>
         <img src={image} alt='Illuastrasjonsbilde av Hanna' onClick={() => handleClick()} />
         <div className='fortune-box'>
           {word}
@@ -63,6 +71,14 @@ const Index = () => {
           .wrapper {
             width: 780px;
             display: flex;
+            background-color: black;
+          }
+          .save-wrapper {
+            text-align: right;
+          }
+          .save-link {
+            text-decoration: none;
+            font-size: 2em;
           }
           @media screen and (max-width: 780px) {
             img {
@@ -80,6 +96,9 @@ const Index = () => {
           }
         `}
         </style>
+      </div>
+      <div className='save-wrapper'>
+        <a href='#' className='save-link' onClick={saveCard}>💾</a>
       </div>
     </div>
   )
