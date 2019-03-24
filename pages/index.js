@@ -23,15 +23,16 @@ const Index = () => {
   const [color, setColor] = useState(randomEntry(colors))
   const [font, setFont] = useState(randomEntry(fonts))
 
-  const handleClick = () => {
+  const handleClick = event => {
+    event.preventDefault()
     setImage(randomEntry(images))
     setWord(getWord())
     setColor(randomEntry(colors))
     setFont(randomEntry(fonts))
   }
 
-  const saveCard = async e => {
-    e.preventDefault()
+  const saveCard = async event => {
+    event.preventDefault()
     const blob = await domToImage.toBlob(window.document.getElementById('hanna-card'))
     saveAs(blob, `hanna-${new Date().getTime()}.png`)
   }
@@ -45,14 +46,14 @@ const Index = () => {
       </Head>
       <main>
         <div className={'wrapper'} id='hanna-card'>
-          <img src={image} alt='Illuastrasjonsbilde av Hanna - Trykk for å endre innholdet på siden' role='button' tabIndex='0' onClick={() => handleClick()} />
+          <img src={image} alt='Illuastrasjonsbilde av Hanna' />
           <div className='fortune-box'>
             {word}
           </div>
           <style jsx global>
             {`
             body {
-              background-color: Black;
+              background-color: white;
               padding: 20px;
               color: ${color};
               font-family: ${font}, serif;
@@ -64,6 +65,7 @@ const Index = () => {
               border-radius: 25px;
               border: 2px solid ${color};
               cursor: pointer;
+              height: 300px;
             }
             img:hover, img:active {
               outline: none;
@@ -77,13 +79,16 @@ const Index = () => {
               width: 780px;
               display: flex;
               background-color: black;
+              border-radius: 25px;
             }
             .save-wrapper {
+              margin-top: 10px;
               text-align: right;
             }
             .save-link {
               text-decoration: none;
               font-size: 2em;
+              padding: 5px;
             }
             .save-link:hover, .save-link:active {
               outline: none;
@@ -106,6 +111,7 @@ const Index = () => {
           </style>
         </div>
         <div className='save-wrapper'>
+          <a href='#' className='save-link' title='Recycle' role='button' tabIndex='0' onClick={handleClick}>♻️</a>
           <a href='#' className='save-link' title='Save this moment 4ever' role='button' tabIndex='0' onClick={saveCard}>💾</a>
         </div>
       </main>
