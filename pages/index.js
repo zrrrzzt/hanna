@@ -43,66 +43,72 @@ const Index = () => {
         <meta name='description' content='Side som genererer tilfeldige ting Hanna hater.' />
         <title>Hanna hater ting!</title>
       </Head>
-      <div className={'wrapper'} id='hanna-card'>
-        <img src={image} alt='Illuastrasjonsbilde av Hanna - Trykk for å endre innholdet på siden' role='button' tabindex='0' onClick={() => handleClick()} />
-        <div className='fortune-box'>
-          {word}
-        </div>
-        <style jsx global>
-          {`
-          body {
-            background-color: Black;
-            padding: 20px;
-            color: ${color};
-            font-family: ${font}, serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-          img {
-            border-radius: 25px;
-            border: 2px solid ${color};
-            cursor: pointer;
-            outline: 0;
-          }
-          .fortune-box {
-            font-size: 3em;
-            padding: 15px;
-          }
-          .wrapper {
-            padding: 10px;
-            width: 780px;
-            display: flex;
-            background-color: black;
-          }
-          .save-wrapper {
-            text-align: right;
-          }
-          .save-link {
-            text-decoration: none;
-            font-size: 2em;
-            outline: 0;
-          }
-          @media screen and (max-width: 780px) {
-            img {
-              height: 100px;
+      <main>
+        <div className={'wrapper'} id='hanna-card'>
+          <img src={image} alt='Illuastrasjonsbilde av Hanna - Trykk for å endre innholdet på siden' role='button' tabIndex='0' onClick={() => handleClick()} />
+          <div className='fortune-box'>
+            {word}
+          </div>
+          <style jsx global>
+            {`
+            body {
+              background-color: Black;
+              padding: 20px;
+              color: ${color};
+              font-family: ${font}, serif;
+              display: flex;
+              align-items: center;
+              justify-content: center;
             }
-            .wrapper {
-              width: 100%;
-              display: block;
-              text-align: center;
+            img {
+              border-radius: 25px;
+              border: 2px solid ${color};
+              cursor: pointer;
+            }
+            img:hover, img:active {
+              outline: none;
             }
             .fortune-box {
-              font-size: 2em;
-              padding: 10px;
+              font-size: 3em;
+              padding: 15px;
             }
-          }
-        `}
-        </style>
-      </div>
-      <div className='save-wrapper'>
-        <a href='#' className='save-link' title='Save this moment 4ever' role='button' tabindex='1' onClick={saveCard}>💾</a>
-      </div>
+            .wrapper {
+              padding: 10px;
+              width: 780px;
+              display: flex;
+              background-color: black;
+            }
+            .save-wrapper {
+              text-align: right;
+            }
+            .save-link {
+              text-decoration: none;
+              font-size: 2em;
+            }
+            .save-link:hover, .save-link:active {
+              outline: none;
+            }
+            @media screen and (max-width: 780px) {
+              img {
+                height: 100px;
+              }
+              .wrapper {
+                width: 100%;
+                display: block;
+                text-align: center;
+              }
+              .fortune-box {
+                font-size: 2em;
+                padding: 10px;
+              }
+            }
+          `}
+          </style>
+        </div>
+        <div className='save-wrapper'>
+          <a href='#' className='save-link' title='Save this moment 4ever' role='button' tabIndex='0' onClick={saveCard}>💾</a>
+        </div>
+      </main>
     </div>
   )
 }
