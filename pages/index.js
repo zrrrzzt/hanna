@@ -67,6 +67,12 @@ const Index = () => {
               cursor: pointer;
               height: 300px;
             }
+            img.save-link {
+              height: 40px;
+              border-radius: 0px;
+              border: 0px;
+              margin-left: 5px;
+            }
             img:hover, img:active {
               outline: none;
             }
@@ -111,8 +117,8 @@ const Index = () => {
           </style>
         </div>
         <div className='save-wrapper'>
-          <a href='#' className='save-link' title='Recycle' role='button' tabIndex='0' onClick={handleClick}>♻️</a>
-          <a href='#' className='save-link' title='Save this moment 4ever' role='button' tabIndex='0' onClick={saveCard}>💾</a>
+          <img src='/static/recycle.png' className='save-link' alt='Trykk for å resirkulere' role='button' tabIndex='0' onClick={handleClick} />
+          <img src='/static/floppy.png' className='save-link' alt='Trykk for å lagre som bilde' role='button' tabIndex='0' onClick={saveCard} />
         </div>
       </main>
     </div>
