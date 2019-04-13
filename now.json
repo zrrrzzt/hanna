@@ -4,10 +4,19 @@
   "alias": [
     "hanna.hater.allthethings.win"
   ],
+  "env": {
+    "NODE_ENV": "production"
+  },
   "builds": [
     { "src": "package.json", "use": "@now/static-build", "config": { "distDir": "out" }}
   ],
-  "env": {
-    "NODE_ENV": "production"
-  }
+  "routes": [
+    {"src": "/", "dest": "/index.html", "headers": {
+      "Content-Security-Policy": "default-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self'; object-src 'none'; img-src 'self' data:; frame-ancestors 'none'",
+      "Strict-Transport-Security": "max-age=63072000;",
+      "X-Frame-Options": "DENY",
+      "X-Content-Type-Options": "nosniff"
+    }},
+    {"src": "(.*)", "dest": "/$1"}
+  ]
 }
