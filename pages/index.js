@@ -129,13 +129,16 @@ const Index = () => {
                 font-size: 2em;
                 padding: 10px;
               }
+              .desktop {
+                display: none;
+              }
             }
           `}
           </style>
         </div>
         <div className='save-wrapper'>
           <img src='/static/recycle.png' className='save-link' alt='Trykk for å resirkulere' role='button' tabIndex='0' onClick={handleClick} />
-          <img src='/static/floppy.png' className='save-link' alt='Trykk for å lagre som bilde' role='button' tabIndex='0' onClick={saveCard} />
+          <img src='/static/floppy.png' className='save-link desktop' alt='Trykk for å lagre som bilde' role='button' tabIndex='0' onClick={saveCard} />
         </div>
       </main>
     </div>
