@@ -62,7 +62,7 @@ const Index = () => {
         <title>Hanna hater ting!</title>
       </Head>
       <main>
-        <div className={'wrapper'} id='hanna-card'>
+        <div className='wrapper' id='hanna-card'>
           <img src={image} alt='Illuastrasjonsbilde av Hanna' />
           <div className='fortune-box'>
             {word}
