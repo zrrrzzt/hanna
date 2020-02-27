@@ -34,8 +34,8 @@
     "next-offline": "5.0.0",
     "random-angry-emoji": "1.0.4",
     "random-shout": "1.1.11",
-    "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "react": "16.13.0",
+    "react-dom": "16.13.0"
   },
   "devDependencies": {
     "ava": "3.4.0",
