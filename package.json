@@ -44,19 +44,6 @@
     "nyc": "15.0.1",
     "standard": "14.3.3"
   },
-  "standard": {
-    "ignore": [
-      "/static/*.js"
-    ],
-    "parser": "babel-eslint",
-    "parserOptions": {
-      "ecmaFeatures": {
-        "experimentalObjectRestSpread": true,
-        "jsx": true
-      },
-      "sourceType": "module"
-    }
-  },
   "engines": {
     "node": ">= 12.16.2"
   }
