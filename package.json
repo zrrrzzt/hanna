@@ -28,8 +28,8 @@
   },
   "homepage": "https://github.com/zrrrzzt/hanna#readme",
   "dependencies": {
-    "dom-to-image": "2.6.0",
     "file-saver": "2.0.2",
+    "html-to-image": "0.1.1",
     "next": "9.3.4",
     "next-offline": "5.0.0",
     "random-angry-emoji": "2.0.1",
