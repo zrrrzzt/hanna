@@ -1,10 +1,6 @@
 {
   "version": 2,
-  "name": "hanna",
   "scope": "zrrrzzt",
-  "alias": [
-    "hanna.hater.allthethings.win"
-  ],
   "env": {
     "NODE_ENV": "production"
   },
