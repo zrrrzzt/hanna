@@ -13,8 +13,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "now-build": "next build",
-    "deploy": "npm test && now && now alias",
+    "deploy": "npm test && vc --prod",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm install"
   },
   "author": "Geir Gåsodden <geir.gasodden@pythonia.no> (https://github.com/zrrrzzt)",
