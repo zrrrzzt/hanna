@@ -1,13 +1,13 @@
 on:
   release:
     types: [published]
-    branches: [master]
+    branches: [main]
 name: Test and Deploy on release
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@main
     - uses: actions/setup-node@v1
       with:
         node-version: 12
