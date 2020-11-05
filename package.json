@@ -29,7 +29,7 @@
   "dependencies": {
     "file-saver": "2.0.2",
     "html-to-image": "1.3.12",
-    "next": "9.5.5",
+    "next": "10.0.1",
     "next-offline": "5.0.2",
     "random-angry-emoji": "3.0.1",
     "random-shout": "2.0.3",
