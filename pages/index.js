@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
 import shout from 'random-shout'
-import htmlToImage from 'html-to-image'
+import { toPng } from 'html-to-image'
 import { saveAs } from 'file-saver'
 import emojis from '../lib/emojis'
 import words from '../lib/words'
@@ -33,7 +33,7 @@ const Index = () => {
 
   const saveCard = async event => {
     event.preventDefault()
-    const png = await htmlToImage.toPng(window.document.getElementById('hanna-card'))
+    const png = await toPng(window.document.getElementById('hanna-card'))
     saveAs(png, `hanna-${new Date().getTime()}.png`)
   }
 

@@ -1,39 +1,29 @@
-const withOffline = moduleExists('next-offline')
-  ? require('next-offline')
-  : {}
+const withOffline = require('next-offline')
 
-const nextConfig = {
-  target: 'serverless',
+module.exports = withOffline({
   workboxOpts: {
-    swDest: 'static/service-worker.js',
+    swDest: process.env.NEXT_EXPORT
+      ? 'service-worker.js'
+      : 'static/service-worker.js',
     runtimeCaching: [
       {
         urlPattern: /^https?.*/,
         handler: 'NetworkFirst',
         options: {
-          cacheName: 'https-calls',
-          networkTimeoutSeconds: 15,
+          cacheName: 'offlineCache',
           expiration: {
-            maxEntries: 150,
-            maxAgeSeconds: 30 * 24 * 60 * 60 // 1 month
-          },
-          cacheableResponse: {
-            statuses: [0, 200]
+            maxEntries: 200
           }
         }
       }
     ]
+  },
+  async rewrites () {
+    return [
+      {
+        source: '/service-worker.js',
+        destination: '/_next/static/service-worker.js'
+      }
+    ]
   }
-}
-
-module.exports = moduleExists('next-offline')
-  ? withOffline(nextConfig)
-  : nextConfig
-
-function moduleExists (name) {
-  try {
-    return require.resolve(name)
-  } catch (error) {
-    return false
-  }
-}
+})

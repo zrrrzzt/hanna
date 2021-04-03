@@ -9,6 +9,7 @@
     "test-offline": "standard && ava",
     "coverage": "nyc ava",
     "coveralls": "nyc ava && nyc report --reporter=lcov && cat coverage/lcov.info | coveralls",
+    "export": "cross-env NEXT_EXPORT=true next build && cross-env NEXT_EXPORT=true next export",
     "standard-fix": "standard --fix",
     "dev": "next",
     "build": "next build",
@@ -40,6 +41,7 @@
     "ava": "3.15.0",
     "babel-eslint": "10.1.0",
     "coveralls": "3.1.0",
+    "cross-env": "7.0.3",
     "nyc": "15.1.0",
     "standard": "16.0.3"
   },
