@@ -30,7 +30,7 @@
   "dependencies": {
     "file-saver": "2.0.5",
     "html-to-image": "1.9.0",
-    "next": "12.0.1",
+    "next": "12.0.2",
     "next-offline": "5.0.5",
     "random-angry-emoji": "4.0.1",
     "random-shout": "2.0.5",
