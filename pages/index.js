@@ -3,6 +3,7 @@ import Head from 'next/head'
 import shout from 'random-shout'
 import { toPng } from 'html-to-image'
 import { saveAs } from 'file-saver'
+
 import emojis from '../lib/emojis'
 import words from '../lib/words'
 import intros from '../lib/intros'
@@ -96,6 +97,10 @@ const Index = () => {
             .fortune-box {
               font-size: 3em;
               padding: 15px;
+            }
+            .imageBox {
+              width: 225px;
+              height: 300px;
             }
             .wrapper {
               padding: 10px;
